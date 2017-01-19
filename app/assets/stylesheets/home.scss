@@ -1,0 +1,28 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.center
+{
+	margin-top:20%;
+	text-align:center;
+	color: #FFF;
+	background: rgba(0,0,0,0.7);
+}
+#bg{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: url("https://68.media.tumblr.com/c232d966bd275a48e91964bf74520153/tumblr_oiqxaujpM21w0blrxo1_250.gif");
+}
+.hidden{
+	display:none;
+}
+.show{
+	display:block;
+}
+.box{
+	padding-left:10%;
+	padding-right:10%;
+}

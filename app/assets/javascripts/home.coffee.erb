@@ -1,0 +1,27 @@
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).ready ->
+  $('#boton').click ->
+    $('.content').animate
+      marginTop: "-10%"
+    a = bg()
+    $('#bg').css 'background','url("'+a+'")'
+    $('#boton').css 'display','none'
+    show '#phrase'
+    show '#author'
+    return
+  return
+
+show = (p1) ->
+  $(p1).removeClass 'hidden'
+  $(p1).addClass 'show'
+  $(p1).addClass 'animated bounce'
+  return
+bg = ->
+  info = [
+    <% Bg.all.each do |bg| %>
+	    '<%= bg.url %>'
+    <% end %>
+  ]
+  info[Math.floor(Math.random() * info.length )]
