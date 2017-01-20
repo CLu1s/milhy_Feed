@@ -1,0 +1,10 @@
+#accordion.panel-group{"aria-multiselectable" => "true", :role => "tablist"}
+  .list-group
+    - @entries.each do |e|
+      .list-group-item{:id => "header#{e.id}",:role => "tab"}
+        %a.collapsed{"aria-controls" => "collapse#{e.id}", "aria-expanded" => "false", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapse#{e.id}", :role => "button"}
+          = e.title
+      .panel-collapse.collapse{"aria-labelledby" => "heading#{e.id}", :id => "collapse#{e.id}", :role => "tabpanel"}
+        .panel-body
+          .col-xs-7.margin10
+            = e.content.html_safe

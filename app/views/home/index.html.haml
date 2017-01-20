@@ -1,12 +1,20 @@
-#bg
-  .center.animated.bounceInUp
-    .content
-      %h1 ¡Hola Milhy!
-      %p
-        = $greeting
-      %button#boton.btn.btn-default 👋🏼 Hola Botón
-      .box
-        %h1#phrase.hidden
-          = $phrase
-        %h3#author.hidden
-          = $author
+.center.animated.bounceInUp
+  .content
+    %h1 ¡Hola Milhy!
+    %p
+      = @greeting
+    %button#boton.btn.btn-default 👋🏼 Hola Botón
+    .box
+      %h1#phrase.hidden
+        = @phrase
+      %h3#author.hidden
+        = @author
+  #feed.container-fluid.hidden.feedBG
+    .row
+      .col-xs-1
+        %ul.nav.nav-pills.nav-stacked.entriesBG
+          - @feed.each do |f|
+            %li{:role => "presentation"}
+              = link_to f.name, home_show_path(id:f.id), remote: true
+      .col-xs-11
+        #entries

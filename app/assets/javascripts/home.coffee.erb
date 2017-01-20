@@ -4,12 +4,12 @@
 $(document).ready ->
   $('#boton').click ->
     $('.content').animate
-      marginTop: "-10%"
-    a = bg()
-    $('#bg').css 'background','url("'+a+'")'
+      marginTop: "-20%"
+    $('#bg').css 'background','url("'+bg()+'")'
     $('#boton').css 'display','none'
     show '#phrase'
     show '#author'
+    show '#feed'
     return
   return
 

@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
 
+  resources :feeds do
+	  member do
+		  resources :entries, only: [:index, :show]
+	  end
+  end
   get 'configuration/index'
   get 'home/index'
+  get 'home/show'
   resources :phrases
   resources :bgs
 
