@@ -1,9 +1,16 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body
+{
+	font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
 .center
 {
 	margin-top:20%;
+	padding-bottom: 1em;
 	text-align:center;
 	color: #FFF;
 	background:rgba(34,38,57,0.8);
@@ -22,7 +29,6 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: url('<%= Background.find(rand(1..Background.count)).url %>');
 }
 .hidden{
 	display:none;
@@ -33,24 +39,40 @@
 .box{
 	padding-left:10%;
 	padding-right:10%;
+	margin-bottom:3em;
 }
 .feedBG{
 	color:black;
 	text-align:left;
-	background:white;
+	background:rgba(255,255,255,0.8);
+	padding-top:2em;
+	padding-bottom:5em;
+	h3{
+		color:#14161B;
+	}
+	a{
+	color:#FF37FF;
+	}
 }
 .entryBG{
 	background:#FFF;
 	padding:10%;
 }
 #feed{
-	padding-left:2%;
 	img{
 		max-height:440px
 	}
 }	
+#accordion {
+	a{
+		color:#000;
+		&::hover{
+			color:#592659;
+			}
+	}
+}
 .entriesBG{
-	background:white;
+	background:#fff;
 }
 .margin10{
 	margin-left:10%

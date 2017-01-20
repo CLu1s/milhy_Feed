@@ -32,8 +32,11 @@ class BackgroundsController < ApplicationController
 
     respond_to do |format|
       if @background.save
+	reNum
+	@background = Background.last
         format.html { redirect_to @background, notice: 'Background was successfully created.' }
         format.json { render :show, status: :created, location: @background }
+	reNum
       else
         format.html { render :new }
         format.json { render json: @background.errors, status: :unprocessable_entity }
@@ -59,6 +62,7 @@ class BackgroundsController < ApplicationController
   # DELETE /backgrounds/1.json
   def destroy
     @background.destroy
+    reNum
     respond_to do |format|
       format.html { redirect_to backgrounds_url, notice: 'Background was successfully destroyed.' }
       format.json { head :no_content }
@@ -74,5 +78,13 @@ class BackgroundsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def background_params
       params.require(:background).permit(:name, :url)
+    end
+    def reNum
+	    count=1
+	    Background.all.each do |bg|
+		    bg.id = count
+		    bg.save!
+		    count+=1
+	    end
     end
 end

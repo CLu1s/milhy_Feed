@@ -1,7 +1,7 @@
 =link_to 'Configuracíon', configuration_index_path
 .center.animated.bounceInUp
   .content
-    %h1 ¡Hola Milhy ❤️!
+    %h1¡Hola Milhy ❤️!
     %p
       = @greeting
     %button#boton.btn.btn-default 👋🏼 Hola Botón
@@ -10,12 +10,14 @@
         = @phrase
       %h3#author.hidden
         = @author
-  #feed.container-fluid.hidden.feedBG
-    .row
-      .col-xs-2
-        %ul.nav.nav-pills.nav-stacked.entriesBG
-          - @feed.each do |f|
-            %li{:role => "presentation"}
-              = link_to f.name, home_show_path(id:f.id), remote: true
-      .col-xs-10
-        #entries
+#feed.container-fluid.hidden.feedBG
+  .row
+    .col-xs-1
+    .col-xs-2.entriesBG
+      %h3 Feeds
+      .list-group.entriesBG
+        - @feed.each do |f|
+          = link_to f.name, home_show_path(id:f.id), remote: true, class: "list-group-item"
+    .col-xs-8.entriesBG
+      %h3 Entradas
+      #entries

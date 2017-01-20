@@ -1,12 +1,11 @@
 = render 'menu/menu'
 %h1 Listing backgrounds
 
-%table
+%table.table.table-condensed.table-hover
   %thead
     %tr
       %th Name
       %th Url
-      %th
       %th
       %th
 
@@ -15,6 +14,8 @@
       %tr
         %td= background.name
         %td= background.url
+        %td
+          %img.miniImg{:src => "#{background.url}"}
         %td= link_to 'Show', background
         %td= link_to 'Edit', edit_background_path(background)
         %td= link_to 'Destroy', background, :method => :delete, :data => { :confirm => 'Are you sure?' }
