@@ -1,6 +1,7 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 .center
 {
 	margin-top:20%;
@@ -8,13 +9,21 @@
 	color: #FFF;
 	background:rgba(34,38,57,0.8);
 }
-#bg{
+#configurationBg{
 	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
 	background: white;
+}
+#bg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: url('<%= Background.find(rand(1..Background.count)).url %>');
 }
 .hidden{
 	display:none;
@@ -29,7 +38,7 @@
 .feedBG{
 	color:black;
 	text-align:left;
-	background:#FFF;
+	background:white;
 }
 .entryBG{
 	background:#FFF;

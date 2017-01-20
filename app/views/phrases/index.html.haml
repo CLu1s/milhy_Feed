@@ -1,2 +1,26 @@
-%h1 Phrases#index
-%p Find me in app/views/phrases/index.html.haml
+= render 'menu/menu'
+%h1 Listing phrases
+
+%table
+  %thead
+    %tr
+      %th Phrase
+      %th Author
+      %th Seen
+      %th
+      %th
+      %th
+
+  %tbody
+    - @phrases.each do |phrase|
+      %tr
+        %td= phrase.phrase
+        %td= phrase.author
+        %td= phrase.seen
+        %td= link_to 'Show', phrase
+        %td= link_to 'Edit', edit_phrase_path(phrase)
+        %td= link_to 'Destroy', phrase, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Phrase', new_phrase_path

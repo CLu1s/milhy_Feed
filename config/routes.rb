@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :phrases
+  resources :backgrounds
   resources :feeds do
 	  member do
 		  resources :entries, only: [:index, :show]

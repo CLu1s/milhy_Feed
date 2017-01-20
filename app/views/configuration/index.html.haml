@@ -1,12 +1,2 @@
-#bg
-  %h1 Configuration#index
-  %p Find me in app/views/configuration/index.html.haml
-  = simple_form_for @phrase do |f|
-    = f.input :phrase
-    = f.input :author
-    = f.input :seen
-    =f.button :submit
-  %h2 BG
-  = simple_form_for @bg do |f|
-    = f.input :url
-    = f.button :submit
+#configurationBg
+  = render 'menu/menu'
