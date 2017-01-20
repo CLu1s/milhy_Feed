@@ -64,6 +64,13 @@ class PhrasesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  def unseen
+	  Phrases.all.each do |p|
+		  p.seen = false
+		  p.save
+	  end
+	  redirect_to configuration_index_path
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

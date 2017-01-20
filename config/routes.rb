@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'configuration/index'
   get 'home/index'
   get 'home/show'
+  get 'phrases/unseen'
   resources :phrases
   resources :bgs
 
