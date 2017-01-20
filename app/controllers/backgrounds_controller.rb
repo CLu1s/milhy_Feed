@@ -5,20 +5,24 @@ class BackgroundsController < ApplicationController
   # GET /backgrounds.json
   def index
     @backgrounds = Background.all
+    render :layout => "clean"
   end
 
   # GET /backgrounds/1
   # GET /backgrounds/1.json
   def show
+    render :layout => "clean"
   end
 
   # GET /backgrounds/new
   def new
     @background = Background.new
+    render :layout => "clean"
   end
 
   # GET /backgrounds/1/edit
   def edit
+    render :layout => "clean"
   end
 
   # POST /backgrounds

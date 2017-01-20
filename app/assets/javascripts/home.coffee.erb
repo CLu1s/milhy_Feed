@@ -1,7 +1,6 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
-#
 $(document).ready ->
   $('#boton').click ->
     $('.content').animate
@@ -19,7 +18,6 @@ show = (p1) ->
   $(p1).addClass 'show'
   $(p1).addClass 'animated bounce'
   return
-
 bg = ->
   info = [
     <% Background.all.each do |bg| %>

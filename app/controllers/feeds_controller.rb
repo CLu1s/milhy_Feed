@@ -5,20 +5,24 @@ class FeedsController < ApplicationController
   # GET /feeds.json
   def index
     @feeds = Feed.all
+    render :layout => "clean"
   end
 
   # GET /feeds/1
   # GET /feeds/1.json
   def show
+    render :layout => "clean"
   end
 
   # GET /feeds/new
   def new
     @feed = Feed.new
+    render :layout => "clean"
   end
 
   # GET /feeds/1/edit
   def edit
+    render :layout => "clean"
   end
 
   # POST /feeds

@@ -12,10 +12,10 @@
         = @author
   #feed.container-fluid.hidden.feedBG
     .row
-      .col-xs-1
+      .col-xs-2
         %ul.nav.nav-pills.nav-stacked.entriesBG
           - @feed.each do |f|
             %li{:role => "presentation"}
               = link_to f.name, home_show_path(id:f.id), remote: true
-      .col-xs-11
+      .col-xs-10
         #entries

@@ -5,20 +5,24 @@ class PhrasesController < ApplicationController
   # GET /phrases.json
   def index
     @phrases = Phrase.all
+    render :layout => "clean"
   end
 
   # GET /phrases/1
   # GET /phrases/1.json
   def show
+    render :layout => "clean"
   end
 
   # GET /phrases/new
   def new
     @phrase = Phrase.new
+    render :layout => "clean"
   end
 
   # GET /phrases/1/edit
   def edit
+    render :layout => "clean"
   end
 
   # POST /phrases
