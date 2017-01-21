@@ -1,3 +1,4 @@
+desc "Sync feeds"
 namespace :sync do
 	task feeds: [:environment] do
 		Feed.all.each do |feed|
