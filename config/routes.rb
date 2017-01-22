@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
   get 'configuration/index'
   get 'home/index'
+  get 'home/feeds'
   get 'home/show'
   get 'phrases/unseen'
   resources :phrases

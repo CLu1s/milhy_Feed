@@ -9,6 +9,9 @@ class HomeController < ApplicationController
   def show
 	  getEntries(params[:id])
   end
+  def feeds
+	  updateFeeds
+  end
 
 private 
 def  greeting(date)

@@ -5,6 +5,9 @@
         %h4.panel-title
           %a.collapsed{"aria-controls" => "collapse#{e.id}", "aria-expanded" => "false", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapse#{e.id}", :role => "button"}
             = e.title
+            %span.small
+              = time_ago_in_words(e.published)
+              ago
       .panel-collapse.collapse{"aria-labelledby" => "heading#{e.id}", :role => "tabpanel", :id => "collapse#{e.id}"}
         .panel-body.margin10
           .col-xs-12.col-sm-6.col-md-8
