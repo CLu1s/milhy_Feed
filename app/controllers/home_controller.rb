@@ -39,7 +39,7 @@ end
 
 def getEntries(id)
 	feed = Feed.find(id)
-	@entries = feed.entries
+	@entries = feed.entries.order('published desc')
 end
 def updateFeeds
 	Feed.all.each do |feed|
