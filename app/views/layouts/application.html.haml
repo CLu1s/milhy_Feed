@@ -7,5 +7,5 @@
     = csrf_meta_tags
     - bg = "https://isowhey.files.wordpress.com/2012/08/empty-ii.jpg"
     - goodbg = Background.find(rand(1..Background.count)).url
-  %body#bg{"style" =>"background: url(#{goodbg != nil ? goodbg : bg })" }
+  %body#bg{"style" =>"background: url(#{Background.count != 0 ? goodbg : bg })" }
     = yield
